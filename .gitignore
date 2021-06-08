@@ -1,3 +1,7 @@
+# User
+build
+.vscode
+
 # Prerequisites
 *.d
 
