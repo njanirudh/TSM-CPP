@@ -2,17 +2,20 @@
 
 AdjacencyMatrix::AdjacencyMatrix()
 {
-
+    this->data = {{0, 10, 15, 20},
+            {10, 0, 35, 25},
+            {15, 35, 0, 30},
+            {20, 25, 30, 0}};
 }
 
-int& AdjacencyMatrix::operator() (int row, int col)
+AdjacencyMatrix::AdjacencyMatrix(Vector2D vec2d) : data(vec2d)
 {
-  return this->data[row][col];
+
 }
 
 int AdjacencyMatrix::operator() (int row, int col) const
 {
-  return this->data[row][col];
+  return this->data.at(row).at(col);
 }
 
 
@@ -22,7 +25,9 @@ std::ostream &operator<<(std::ostream &os, const AdjacencyMatrix &p)
     {
         for (auto const value : row)
         {
-            os << value << " ";
+            if (value == 0){os << value << "  ";}
+            else{os << value << " ";}
+                
         }
         os << std::endl;
     }
@@ -31,26 +36,50 @@ std::ostream &operator<<(std::ostream &os, const AdjacencyMatrix &p)
 
 bool AdjacencyMatrix::edit_edge(int row, int col, int weight)
 {
-    this->data[row][col] = weight;
-    return 1;
+    this->data.at(row).at(col) = weight;
+    return true;
 }
 
-// https://www.cplusplus.com/forum/beginner/31363/
 bool AdjacencyMatrix::delete_edge(int row, int col)
 {
-   this->data[row][col] = 0;
-   return 1; 
+   this->data.at(row).at(col) = 0;
+   return true; 
 }
 
-bool AdjacencyMatrix::delete_vertex(int v)
+bool AdjacencyMatrix::delete_vertex(int index)
 {
-    int new_size = this->data.size() - 1;
-    std::cout<< new_size << std::endl;
-    return 1;
+    // Remove rows
+    this->data.erase(this->data.begin() + index);
+
+    // Remove column
+    for (auto& row : this->data)
+    {
+        row.erase(row.begin() + index);
+    } 
+
+    return true;
+}
+
+bool AdjacencyMatrix::add_vertex()
+{
+    int size = this->data.size();
+    // Add an extra column with weights 0
+    for (auto&row : this->data)
+    {
+        row.push_back(0);
+    }
+    
+    // Add extra row with 0 weight
+    this->data.push_back(std::vector<int>(size+1, 0));
+    return true;
 }
 
 bool AdjacencyMatrix::reset_matrix()
 {
-    return 1;
+    this->data = {{0, 10, 15, 20},
+            {10, 0, 35, 25},
+            {15, 35, 0, 30},
+            {20, 25, 30, 0}};
+    return true;
 }
 
