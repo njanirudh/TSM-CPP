@@ -50,6 +50,11 @@ bool AdjacencyMatrix::delete_edge(int row, int col)
 
 bool AdjacencyMatrix::delete_vertex(int index)
 {
+    // Prevents the user from deleting all vertices.
+    if (this->get_size() == 2)
+        std::cout<< "Cannot have a AdjacencyMatrix with only one vertex.";
+        return false;
+
     // Remove rows
     this->data.erase(this->data.begin() + index);
 
@@ -76,12 +81,17 @@ bool AdjacencyMatrix::add_vertex()
     return true;
 }
 
+const int AdjacencyMatrix::get_size() const
+{
+    return this->data.size(); // square marix
+}
+
 bool AdjacencyMatrix::reset_matrix()
 {
     this->data = {{0, 10, 15, 20},
-            {10, 0, 35, 25},
-            {15, 35, 0, 30},
-            {20, 25, 30, 0}};
+                {10, 0, 35, 25},
+                {15, 35, 0, 30},
+                {20, 25, 30, 0}};
     return true;
 }
 
