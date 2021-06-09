@@ -2,10 +2,7 @@
 
 AdjacencyMatrix::AdjacencyMatrix()
 {
-    this->data = {{0, 10, 15, 20},
-            {10, 0, 35, 25},
-            {15, 35, 0, 30},
-            {20, 25, 30, 0}};
+    this->reset_matrix();
 }
 
 AdjacencyMatrix::AdjacencyMatrix(Vector2D vec2d) : data(vec2d)
@@ -18,13 +15,13 @@ int AdjacencyMatrix::operator() (int row, int col) const
   return this->data.at(row).at(col);
 }
 
-
 std::ostream &operator<<(std::ostream &os, const AdjacencyMatrix &p)
 {
     for (auto const row : p.data)
     {
         for (auto const value : row)
         {
+            // Pretty visualization
             if (value == 0){os << value << "  ";}
             else{os << value << " ";}
                 
@@ -36,8 +33,13 @@ std::ostream &operator<<(std::ostream &os, const AdjacencyMatrix &p)
 
 bool AdjacencyMatrix::edit_edge(int row, int col, int weight)
 {
-    this->data.at(row).at(col) = weight;
-    return true;
+    // Assuming no self connections
+    if (row != col)
+    {
+        this->data.at(row).at(col) = weight;
+        return true;
+    }
+    return false;
 }
 
 bool AdjacencyMatrix::delete_edge(int row, int col)
