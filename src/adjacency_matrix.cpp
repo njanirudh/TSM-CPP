@@ -43,6 +43,7 @@ bool AdjacencyMatrix::edit_edge(int row, int col, int weight)
     return false;
 }
 
+// Verteces are counted from (0...n)
 bool AdjacencyMatrix::delete_edge(int row, int col)
 {
    this->data.at(row).at(col) = 0;

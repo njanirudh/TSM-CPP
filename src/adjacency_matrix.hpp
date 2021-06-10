@@ -25,11 +25,11 @@ perform vertex and edge addition, editing, deletion.
 @requirement The class satisfies the following concept requirements:
 - Basic
  - [MoveConstructible](https://en.cppreference.com/w/cpp/named_req/MoveConstructible):
-   A Matrix value can be constructed from an rvalue argument.
+   A AdjacencyMatrix value can be constructed from an rvalue argument.
  - [CopyConstructible](https://en.cppreference.com/w/cpp/named_req/CopyConstructible):
-   A Matrix value can be copy-constructed from an lvalue expression.
+   A AdjacencyMatrix value can be copy-constructed from an lvalue expression.
  - [Destructible](https://en.cppreference.com/w/cpp/named_req/Destructible):
-   Matrix values can be destructed.
+   AdjacencyMatrix values can be destructed.
 */
 
 class AdjacencyMatrix
