@@ -1,17 +1,8 @@
 #include "catch.hpp"
 
-
-TEST_CASE("Matrix constructor", "[constructor]")
+TEST_CASE("TSP Solver", "[TSP Solver]")
 {
   SECTION("Identity"){
    REQUIRE(1 == 1);
-  }
-
-  SECTION("Same Values"){
-  REQUIRE(1 == 1);
-  }
-
-  SECTION("Initializer List"){
-     REQUIRE(1 == 1);
   }
 }

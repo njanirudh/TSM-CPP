@@ -42,6 +42,10 @@ class AdjacencyMatrix
 
         friend std::ostream &operator<<(std::ostream &os, const AdjacencyMatrix &p);
 
+        // AdjMatrix comparison
+        friend bool operator==(const AdjacencyMatrix &lhs, const AdjacencyMatrix &rhs);
+        friend bool operator!=(const AdjacencyMatrix &lhs, const AdjacencyMatrix &rhs);
+
     public:
         AdjacencyMatrix();
         AdjacencyMatrix(Vector2D vec);
@@ -51,7 +55,7 @@ class AdjacencyMatrix
         AdjacencyMatrix(AdjacencyMatrix &&) = default;      // CopyConstructible
         ~AdjacencyMatrix() = default;              // Destructible
 
-        int operator() (int row, int col) const;  
+        int operator() (int row, int col) const;  // Access Elements
         AdjacencyMatrix& operator=(const AdjacencyMatrix&) = default;
 
 
