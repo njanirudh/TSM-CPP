@@ -21,6 +21,6 @@ add_executable(AdjMatrixTest "${PROJECT_SOURCE_DIR}/tests/adjmatrix_test.cpp")
 add_test(NAME adjmatrixlibtest COMMAND AdjMatrixTest) 
 target_link_libraries(AdjMatrixTest PRIVATE AdjMatrixTest Catch2_main)
 
-add_executable(TSPSolverTest "${PROJECT_SOURCE_DIR}/tests/operations_test.cpp")
+add_executable(TSPSolverTest "${PROJECT_SOURCE_DIR}/tests/tspsolver_test.cpp")
 add_test(NAME tspsolverlibtest COMMAND TSPSolverTest) 
 target_link_libraries(TSPSolverTest PRIVATE TSPLib AdjMatrixTest Catch2_main)
