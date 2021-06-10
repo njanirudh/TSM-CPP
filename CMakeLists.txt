@@ -3,6 +3,11 @@ project(TSP VERSION 0.1.0)
 
 include(CTest)
 enable_testing()
+add_subdirectory(tests)
+
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 add_executable(TSP  main.cpp
                     src/adjacency_matrix.hpp
