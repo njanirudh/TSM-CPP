@@ -7,8 +7,8 @@ enable_testing()
 add_executable(TSP  main.cpp
                     src/adjacency_matrix.hpp
                     src/adjacency_matrix.cpp
-                    src/TSPSolver.hpp
-                    src/TSPSolver.cpp
+                    src/tsp_solver.hpp
+                    src/tsp_solver.cpp
                     src/CLI11.hpp)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})

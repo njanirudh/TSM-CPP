@@ -7,7 +7,8 @@ AdjacencyMatrix::AdjacencyMatrix()
 
 AdjacencyMatrix::AdjacencyMatrix(Vector2D vec2d) : data(vec2d)
 {
-
+    if (this->data.size() != this->data[0].size())
+        throw std::invalid_argument( "[ERROR] Received invalid matrix input." );
 }
 
 int AdjacencyMatrix::operator() (int row, int col) const

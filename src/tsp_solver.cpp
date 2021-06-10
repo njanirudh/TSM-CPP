@@ -1,4 +1,4 @@
-#include "TSPSolver.hpp"
+#include "tsp_solver.hpp"
 
 
 bool TSPSolver::set_adj_matrix(const AdjacencyMatrix& adj, const int start_vertex)
@@ -13,7 +13,7 @@ bool TSPSolver::solve_tsp()
 {
     if(!this->is_initialized)
         std::cout<<"Appropriate AdjacencyMatrix and StartVertex not set. Using default values!"<<std::endl;
-        return false; 
+         
 
     int size = this->adj_mat.get_size();
 
@@ -36,7 +36,6 @@ bool TSPSolver::solve_tsp()
     while (next_permutation(ver.begin(), ver.end()));
     this->shortest_path_cost = m_p;
 
-    std::cout<<std::endl;
     return true;
 }
 
