@@ -30,7 +30,7 @@ Three binaries are generated inside '<path to project>/build/bin'.
 You can run the exe using './TSP'.
 
 ### Libraries Used
-[CLIUtils](https://github.com/CLIUtils/CLI11) - Header only commandline utils for C++
+[CLIUtils](https://github.com/CLIUtils/CLI11) - Header only commandline utils for C++     
 [Catch2](https://github.com/catchorg/Catch2) - Testing framework
 
 ### References
