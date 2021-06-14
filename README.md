@@ -4,7 +4,7 @@ Simple program to solve a Travelling Salesman problem written in modern C++.  Th
 
 Example usages are given in the 'main.hpp' and 'tests/' folder.
 
-We run TSP on a simple [example weighted graph](https://www.geeksforgeeks.org/traveling-salesman-problem-tsp-implementation/) denoted by an adjacency matrix. 
+We run TSP on a simple [example weighted graph](https://www.geeksforgeeks.org/traveling-salesman-problem-tsp-implementation/) denoted by an adjacency matrix.           
 `{{ 0, 10, 15, 20 },`
 ` { 10, 0, 35, 25 },`
 ` { 15, 35, 0, 30 },`
