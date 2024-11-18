@@ -1,6 +1,9 @@
 
 # TSP Solver v1.0 
-Simple program to solve a Travelling Salesman problem written in modern C++.  The program has two main classes 1).   AdjacencyMatrix : Datastructure to create, store or edit an adjacency matrix and 2). TSPSolver : Class that runs a brute force approach to find the minimum path. 
+Simple program to solve a Travelling Salesman problem written in modern C++.  
+The program has two main classes 
+1). AdjacencyMatrix : Datastructure to create, store or edit an adjacency matrix and 
+2). TSPSolver : Class that runs a brute force approach to find the minimum path. 
 
 Example usages are given in the 'main.hpp' and 'tests/' folder.
 
